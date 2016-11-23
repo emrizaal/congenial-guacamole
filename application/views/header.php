@@ -76,10 +76,13 @@
                             <a href="<?=base_url()?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
+                            <a href="<?=base_url()?>mosque"><i class="fa fa-user fa-fw"></i> Mosque</a>
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Kajian</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Ustadz</a>
+                            <a href="<?=base_url()?>ustadz"><i class="fa fa-user fa-fw"></i> Ustadz</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Article</a>
