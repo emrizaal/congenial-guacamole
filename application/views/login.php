@@ -41,7 +41,7 @@
 						<h4>Login Admin</h4>
 					</div>
 					<div class="modal-body">
-						<?php echo form_open('admin/login_admin'); 
+						<?php echo form_open('auth/auth'); 
 						if(isset($error) && $error) {
 							echo "<p class='bg-danger text-danger' style='padding:10px; border-radius:4px'>Username dan Password yang Anda masukkan salah!</p><br>";
 						}

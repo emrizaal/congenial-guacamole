@@ -9,6 +9,7 @@
     
     <div class="row">
         <div class="col-lg-12">
+            <a href="<?=base_url()?>mosque/addMosque"><button class="btn btn-primary">Add Mosque</button></a>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Mosque list
@@ -39,10 +40,9 @@
                                         <td><?=$d['telp']?></td>
                                         <td><?=$d['url']?></td>
                                         <td>
-                                        <a href="#"><button class="btn btn-success"><span class="fa fa-pencil"></span></button></a>
-                                        <a href="#"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
-                                        <a href="#"><button class="btn btn-primary"><span class="fa fa-external-link"></span></button></a>
-                                        <a href="#"><button class="btn btn-warning"><span class="fa fa-gear"></span></button></a>
+                                            <a href="<?=base_url()?>mosque/editMosque/<?=$d['id_mosque']?>"><button class="btn btn-success"><span class="fa fa-pencil"></span></button></a>
+                                            <a href="<?=base_url()?>mosque/deleteMosque/<?=$d['id_mosque']?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
+                                            <a href="<?=base_url()?>mosque/detailMosque/<?=$d['id_mosque']?>"><button class="btn btn-primary"><span class="fa fa-external-link"></span></button></a>
                                         </td>
                                     </tr>
                                     <?php 

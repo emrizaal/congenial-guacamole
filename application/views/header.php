@@ -29,6 +29,27 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="<?=base_url()?>assets/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Include Editor style. -->
+    <link href="<?=base_url();?>assets/wysiwyg/css/froala_editor.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url();?>assets/wysiwyg/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include Code Mirror style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+    <!-- Include Editor Plugins style. -->
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/code_view.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/colors.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/file.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/image.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/image_manager.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/quick_insert.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/table.css">
+    <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/video.css">
     
 
 </head>
@@ -53,7 +74,7 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> Hello, <?=$this->session->userdata("username_admin");?> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i> Hello, <?=$this->session->userdata("name");?> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -61,7 +82,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?=base_url()?>auth/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

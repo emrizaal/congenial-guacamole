@@ -1,8 +1,8 @@
 <?php 
-class M_ustadz extends CI_Model {
+class M_ustadz extends MY_Model {
 
-	function getAllUstadz(){
-		$query=$this->db->query("SELECT * from ustadz")->result_array();
+	public function getUstadzById($id){
+		$query=$this->db->query("SELECT * from ustadz where id_ustadz='$id'")->row_array();
 		return $query;
 	}
 
