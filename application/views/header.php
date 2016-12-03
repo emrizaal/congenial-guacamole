@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/table.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/video.css">
     
-
+    <link href="<?=base_url()?>assets/css/jquery-ui.css" rel="stylesheet">
 </head>
 
 <body>
@@ -100,7 +100,7 @@
                             <a href="<?=base_url()?>mosque"><i class="fa fa-user fa-fw"></i> Mosque</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Kajian</a>
+                            <a href="<?=base_url()?>kajian"><i class="fa fa-user fa-fw"></i> Kajian</a>
                         </li>
                         <li>
                             <a href="<?=base_url()?>ustadz"><i class="fa fa-user fa-fw"></i> Ustadz</a>

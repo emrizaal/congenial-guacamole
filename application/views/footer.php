@@ -17,12 +17,18 @@
 <script src="<?=base_url()?>assets/datatables/media/js/jquery.dataTables.min.js"></script>
 <script src="<?=base_url()?>assets/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
+<script src="<?=base_url()?>assets/js/jquery-ui.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#dataTables-example').DataTable({
 			responsive: true
 		});
 	});
+
+    $( "#datepicker" ).datepicker({
+    	dateFormat: "yy-mm-dd"
+    });
 </script>
 <script src="<?=base_url();?>assets/tinymce/tinymce.min.js"></script>
 <script>

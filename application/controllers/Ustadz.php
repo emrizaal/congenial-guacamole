@@ -46,19 +46,19 @@ class Ustadz extends MY_Controller {
 	}
 
 	public function deleteUstadz($id){
-		$data=$this->m_ustadz->getUstadzById($id);
+		$data=$this->m_ustadz->getUstadzById($this->session->userdata('id_mosque'),$id);
 		$this->m_ustadz->deleteById($this->_table,array('id_ustadz'=>$id));
 		unlink("assets/image/ustadz/".$data['pic']);
 		redirect("ustadz");
 	}
 
 	public function detailUstadz($id){
-		$data['data']=$this->m_ustadz->getUstadzById($id);
+		$data['data']=$this->m_ustadz->getUstadzById($this->session->userdata('id_mosque'),$id);
 		$this->load->view("detail_ustadz",$data);
 	}
 
 	public function editUstadz($id){
-		$data['data']=$this->m_ustadz->getUstadzById($id);
+		$data['data']=$this->m_ustadz->getUstadzById($this->session->userdata('id_mosque'),$id);
 		$this->load->view("edit_ustadz",$data);
 	}
 
@@ -81,7 +81,7 @@ class Ustadz extends MY_Controller {
 		}else{
 			$finfo=$this->upload->data();
 			$data['pic'] = $finfo['file_name'];
-			$pic=$this->m_ustadz->getUstadzById($p['id_ustadz']);
+			$pic=$this->m_ustadz->getUstadzById($this->session->userdata('id_mosque'),$p['id_ustadz']);
 			unlink("assets/image/ustadz/".$pic['pic']);
 		}
 
