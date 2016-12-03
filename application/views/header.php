@@ -109,10 +109,10 @@
                             <a href="<?=base_url()?>article"><i class="fa fa-user fa-fw"></i> Article</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> E-Book</a>
+                            <a href="<?=base_url()?>ebook"><i class="fa fa-user fa-fw"></i> E-Book</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Slider</a>
+                            <a href="<?=base_url()?>slider"><i class="fa fa-user fa-fw"></i> Slider</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Pop Up</a>

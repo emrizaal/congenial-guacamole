@@ -2,14 +2,14 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Ustadz</h1>
+            <h1 class="page-header">Ebook</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     
     <div class="row">
         <div class="col-lg-12">
-            <a href="<?=base_url()?>ustadz/addUstadz"><button class="btn btn-primary">Add Ustadz</button></a>
+            <a href="<?=base_url()?>ebook/addEbook"><button class="btn btn-primary">Add Ebook</button></a>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Ustadz List
@@ -22,8 +22,9 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Pic</th>
-                                    <th>Name</th>
+                                    <th>Title</th>
                                     <th>Description</th>
+                                    <th>Url</th>
                                     <th>#</th>
                                 </tr>
                             </thead>
@@ -34,13 +35,14 @@
                                     ?>
                                     <tr>
                                         <td><?=$no?></td>
-                                        <td><img height="200px" src="<?=base_url()?>assets/image/ustadz/<?=$d['pic']?>"></td>
-                                        <td><?=$d['name']?></td>
+                                        <td><img height="200px" src="<?=base_url()?>assets/image/ebook/<?=$d['pic']?>"></td>
+                                        <td><?=$d['title']?></td>
                                         <td><?=substr($d['description'], 0,255)?></td>
+                                        <td><?=$d['url']?></td>
                                         <td>
-                                            <a href="<?=base_url()?>ustadz/editUstadz/<?=$d['id_ustadz']?>"><button class="btn btn-success"><span class="fa fa-pencil"></span></button></a>
-                                            <a href="<?=base_url()?>ustadz/deleteUstadz/<?=$d['id_ustadz']?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
-                                            <a href="<?=base_url()?>ustadz/detailUstadz/<?=$d['id_ustadz']?>"><button class="btn btn-primary"><span class="fa fa-external-link"></span></button></a>
+                                            <a href="<?=base_url()?>ebook/editEbook/<?=$d['id_ebook']?>"><button class="btn btn-success"><span class="fa fa-pencil"></span></button></a>
+                                            <a href="<?=base_url()?>ebook/deleteEbook/<?=$d['id_ebook']?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
+                                            <a href="<?=base_url()?>ebook/detailEbook/<?=$d['id_ebook']?>"><button class="btn btn-primary"><span class="fa fa-external-link"></span></button></a>
                                         </td>
                                     </tr>
                                     <?php 
