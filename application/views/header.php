@@ -106,7 +106,7 @@
                             <a href="<?=base_url()?>ustadz"><i class="fa fa-user fa-fw"></i> Ustadz</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Article</a>
+                            <a href="<?=base_url()?>article"><i class="fa fa-user fa-fw"></i> Article</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> E-Book</a>
