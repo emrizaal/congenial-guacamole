@@ -115,7 +115,7 @@
                             <a href="<?=base_url()?>slider"><i class="fa fa-user fa-fw"></i> Slider</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Pop Up</a>
+                            <a href="<?=base_url()?>popup"><i class="fa fa-user fa-fw"></i> Pop Up</a>
                         </li>
                     </ul>
                 </div>

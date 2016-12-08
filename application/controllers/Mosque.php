@@ -30,7 +30,7 @@ class Mosque extends MY_Controller {
 
 	public function deleteMosque($id){
 		$p['id_mosque']=$id;
-		$res=$this->m_mosque->deleteById($this->_table,$p);
+		$res=$this->m_mosque->adminDeleteById($this->_table,$p);
 		if($res)redirect("mosque");
 	}
 
@@ -41,7 +41,7 @@ class Mosque extends MY_Controller {
 
 	public function updateMosque(){
 		$p=$this->db->escape_str($this->input->post());
-		$res=$this->m_mosque->update($this->_table,$p,'id_mosque');
+		$res=$this->m_mosque->adminUpdate($this->_table,$p,'id_mosque');
 		if($res)redirect("mosque");
 	}
 

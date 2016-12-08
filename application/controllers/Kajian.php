@@ -42,6 +42,8 @@ class Kajian extends MY_Controller {
 		}
 
 		$p=$this->db->escape_str($this->input->post());
+		$link = strtolower($p['name']);
+		$link  = str_replace(' ', '-', $link);
 		$data=array(
 			'id_ustadz' => $p['ustadz'],
 			'id_mosque' => $this->session->userdata('id_mosque'),
@@ -51,6 +53,7 @@ class Kajian extends MY_Controller {
 			'date' => $p['date'],
 			'time_start' => $p['time_start'],
 			'time_end' => $p['time_end'],
+			'url' => $link,
 			'pic' => $finfo['file_name'],
 			'attachment' => $fattachment['file_name']
 			);
@@ -80,7 +83,8 @@ class Kajian extends MY_Controller {
 		$p=$this->db->escape_str($this->input->post());
 		$kajian=$this->m_kajian->getKajianById($this->session->userdata('id_mosque'),$p['id_kajian']);
 
-
+		$link = strtolower($p['name']);
+		$link  = str_replace(' ', '-', $link);
 		$data=array(
 			'id_kajian' => $p['id_kajian'],
 			'id_ustadz' => $p['ustadz'],
@@ -90,7 +94,8 @@ class Kajian extends MY_Controller {
 			'place' => $p['place'],
 			'date' => $p['date'],
 			'time_start' => $p['time_start'],
-			'time_end' => $p['time_end']
+			'time_end' => $p['time_end'],
+			'url' => $link
 			);
 
 

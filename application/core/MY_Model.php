@@ -18,11 +18,24 @@ class MY_Model extends CI_Model {
 	}
 
 	function deleteById($table,$data){
+		$data['id_mosque']=$this->session->userdata("id_mosque");
 		$query = $this->db->delete($table,$data);
 		return $query;
 	}
 
 	function update($table,$data,$key){
+		$this->db->where('id_mosque',$this->session->userdata("id_mosque"));
+		$this->db->where($key,$data[$key]);
+		$query = $this->db->update($table,$data);
+		return $query;
+	}
+
+	function adminDeleteById($table,$data){
+		$query = $this->db->delete($table,$data);
+		return $query;
+	}
+
+	function adminUpdate($table,$data,$key){
 		$this->db->where($key,$data[$key]);
 		$query = $this->db->update($table,$data);
 		return $query;

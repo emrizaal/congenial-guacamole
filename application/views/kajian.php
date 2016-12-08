@@ -26,6 +26,7 @@
                                     <th>Place</th>
                                     <th>Date</th>
                                     <th>Time</th>
+                                    <th>Attendance</th>
                                     <th>#</th>
                                 </tr>
                             </thead>
@@ -41,6 +42,7 @@
                                         <td><?=$d['place']?></td>
                                         <td><?=$d['date']?></td>
                                         <td><?=date('H:i',strtotime($d['time_start']))?> - <?=date('H:i',strtotime($d['time_end']))?></td>
+                                        <td><b><?=$d['attendance']?></b> Attend</td>
                                         <td>
                                             <a href="<?=base_url()?>kajian/editKajian/<?=$d['id_kajian']?>"><button class="btn btn-success"><span class="fa fa-pencil"></span></button></a>
                                             <a href="<?=base_url()?>kajian/deleteKajian/<?=$d['id_kajian']?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
