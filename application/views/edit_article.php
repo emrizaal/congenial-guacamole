@@ -14,9 +14,10 @@ $this->load->view("header");
      <div class="col-md-12">
      <form action="<?=base_url()?>article/updateArticle" method="POST" role="form" enctype="multipart/form-data">
      <input type="hidden" name="id_article" value="<?=$data['id_article']?>">
-        <div class="form-group">
+        <div class="form-group"> 
           <label>Title</label>
           <input type="text" value="<?=$data['title']?>" class="form-control" name="title" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Content</label>

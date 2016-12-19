@@ -16,6 +16,7 @@ $this->load->view("header");
         <div class="form-group">
           <label>Name</label>
           <input type="text" class="form-control" name="name" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Ustadz</label>
@@ -32,22 +33,27 @@ $this->load->view("header");
         <div class="form-group">
           <label>Description</label>
           <textarea name="description" class="form-control"></textarea>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Place</label>
           <input type="text" class="form-control" name="place" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Date</label>
           <input type="text" class="form-control" name="date" id="datepicker" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Time Start</label>
           <input type="text" class="form-control" name="time_start" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Time End</label>
           <input type="text" class="form-control" name="time_end" required/>
+          <div class="help-block with-errors"></div>
         </div>
 
         <div class="form-group">
@@ -60,7 +66,7 @@ $this->load->view("header");
         </div>
         <hr>
         <button type="submit" class="btn btn-primary">Save</button>
-        <a href="<?=base_url()?>ustadz"><button type="button" class="btn btn-default">Cancel</button></a>
+        <a href="<?=base_url()?>kajian"><button type="button" class="btn btn-default">Cancel</button></a>
       </form>
     </div>
   </div>

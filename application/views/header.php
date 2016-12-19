@@ -77,9 +77,9 @@
                         <i class="fa fa-user fa-fw"></i> Hello, <?=$this->session->userdata("name");?> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="<?=base_url()?>mosque/editProfile/<?=$this->session->userdata('id_mosque')?>"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="<?=base_url()?>mosque/changePassword/<?=$this->session->userdata('id_mosque')?>"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="<?=base_url()?>auth/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -90,6 +90,9 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
+            <?php 
+            $session = $this->session->userdata();
+            ?>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -97,23 +100,33 @@
                             <a href="<?=base_url()?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?=base_url()?>mosque"><i class="fa fa-user fa-fw"></i> Mosque</a>
+                            <a href="<?=base_url()?>mosque"><img src="<?=base_url()?>assets/image/mosque/mosque_default.png" width="50"/> Mosque</a>
                         </li>
+                        <?php if($session['kajian']==1){?>
                         <li>
                             <a href="<?=base_url()?>kajian"><i class="fa fa-user fa-fw"></i> Kajian</a>
                         </li>
+                        <?php } ?>
+                        <?php if($session['ustadz']==1){?>
                         <li>
                             <a href="<?=base_url()?>ustadz"><i class="fa fa-user fa-fw"></i> Ustadz</a>
                         </li>
+                        <?php } ?>
+                        <?php if($session['article']==1){?>
                         <li>
                             <a href="<?=base_url()?>article"><i class="fa fa-user fa-fw"></i> Article</a>
                         </li>
+                        <?php } ?>
+                        <?php if($session['ebook']==1){?>
                         <li>
                             <a href="<?=base_url()?>ebook"><i class="fa fa-user fa-fw"></i> E-Book</a>
                         </li>
+                        <?php } ?>
+                        <?php if($session['slider']==1){?>
                         <li>
                             <a href="<?=base_url()?>slider"><i class="fa fa-user fa-fw"></i> Slider</a>
                         </li>
+                        <?php } ?>
                         <li>
                             <a href="<?=base_url()?>popup"><i class="fa fa-user fa-fw"></i> Pop Up</a>
                         </li>

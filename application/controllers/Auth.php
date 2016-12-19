@@ -22,7 +22,13 @@ class Auth extends MY_Controller {
 		if($res){
 			$data=array(
 				'id_mosque' => $res['id_mosque'],
-				'name' => $res['name']
+				'name' => $res['name'],
+				'kajian' => $res['kajian'],
+				'ustadz' => $res['ustadz'],
+				'ebook' => $res['ebook'],
+				'article' => $res['article'],
+				'slider' => $res['slider'],
+				'is_admin' => 0
 				);
 			$this->session->set_userdata($data);
 			redirect('dashboard');

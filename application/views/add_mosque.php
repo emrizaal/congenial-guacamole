@@ -16,14 +16,17 @@ $this->load->view("header");
         <div class="form-group">
           <label>Username</label>
           <input type="text" class="form-control" name="username" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Name</label>
           <input type="text" class="form-control" name="name" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Email</label>
           <input type="email" class="form-control" name="email" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>feature</label>

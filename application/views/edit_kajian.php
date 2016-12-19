@@ -17,6 +17,7 @@ $this->load->view("header");
          <div class="form-group">
           <label>Name</label>
           <input type="text" class="form-control" name="name" value="<?=$data['name']?>" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Ustadz</label>
@@ -37,18 +38,22 @@ $this->load->view("header");
         <div class="form-group">
           <label>Place</label>
           <input type="text" class="form-control" name="place" value="<?=$data['place']?>" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Date</label>
           <input type="text" class="form-control" name="date" id="datepicker" value="<?=$data['date']?>" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Time Start</label>
           <input type="text" class="form-control" name="time_start" value="<?=$data['time_start']?>" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Time End</label>
           <input type="text" class="form-control" name="time_end" value="<?=$data['time_end']?>" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Image</label><br>

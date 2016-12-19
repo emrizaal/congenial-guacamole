@@ -17,6 +17,7 @@ $this->load->view("header");
         <div class="form-group">
           <label>Name</label>
           <input type="text" value="<?=$data['name']?>" class="form-control" name="name" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Description</label>

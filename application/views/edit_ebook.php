@@ -17,6 +17,7 @@ $this->load->view("header");
          <div class="form-group">
           <label>Title</label>
           <input type="text" value="<?=$data['title']?>" class="form-control" name="title" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Description</label>
@@ -25,6 +26,7 @@ $this->load->view("header");
         <div class="form-group">
           <label>Url</label>
           <input type="text" value="<?=$data['url']?>" class="form-control" name="url" required/>
+          <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
           <label>Photo</label>

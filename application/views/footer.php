@@ -7,6 +7,7 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
+<script src="<?=base_url()?>assets/js/validator.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
 <script src="<?=base_url()?>assets/metisMenu/dist/metisMenu.min.js"></script>
@@ -22,13 +23,17 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#dataTables-example').DataTable({
-			responsive: true
+			responsive: true,
+			"scrollX": true
 		});
 	});
 
-    $( "#datepicker" ).datepicker({
-    	dateFormat: "yy-mm-dd"
-    });
+	$( "#datepicker" ).datepicker({
+		dateFormat: "yy-mm-dd"
+	});
+
+	$('form').validator();
+
 </script>
 <script src="<?=base_url();?>assets/tinymce/tinymce.min.js"></script>
 <script>
