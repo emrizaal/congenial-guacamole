@@ -1,4 +1,4 @@
-<?php
+<?php 
 $this->load->view("header");
 ?>
 <!-- /. NAV SIDE  -->
@@ -6,15 +6,13 @@ $this->load->view("header");
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2 align="center">Edit Kajian</h2>
+        <h2 align="center">Edit Kajian</h2> 
         <hr>
       </div>
     </div>
     <div class="row">
      <div class="col-md-12">
-       <form action="<?=API_LINK?>/kajian/updateKajian" method="POST" role="form" enctype="multipart/form-data">
-         <input type="hidden" name="id_mosque" value="<?=$this->session->userdata('id_mosque')?>">
-         <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
+       <form action="<?=base_url()?>kajian/updateKajian" method="POST" role="form" enctype="multipart/form-data">
          <input type="hidden" name="id_kajian" value="<?=$data['id_kajian']?>">
          <div class="form-group">
           <label>Name</label>
@@ -24,11 +22,11 @@ $this->load->view("header");
         <div class="form-group">
           <label>Ustadz</label>
           <select name="ustadz" class="form-control">
-            <?php
-            foreach ($ustadz['collection'] as $u){
+            <?php 
+            foreach ($ustadz as $u){
               ?>
               <option value="<?=$u['id_ustadz']?>" <?=$u['id_ustadz']==$data['id_ustadz'] ? 'selected' : ''?>><?=$u['name']?></option>
-              <?php
+              <?php 
             }
             ?>
           </select>
@@ -59,12 +57,12 @@ $this->load->view("header");
         </div>
         <div class="form-group">
           <label>Image</label><br>
-          <img src="<?=API_LINK?>/assets/image/kajian/<?=$data['pic']?>" height="300px">
+          <img src="<?=base_url()?>assets/image/kajian/<?=$data['pic']?>" height="300px">
           <input type="file" class="form-control" name="fupload"/>
         </div>
         <div class="form-group">
           <label>Attachment</label><br>
-          <a href="<?=API_LINK?>/assets/image/kajian/<?=$data['attachment']?>" target="_blank"><?=$data['attachment']?></a>
+          <a href="<?=base_url()?>assets/image/kajian/<?=$data['attachment']?>" target="_blank"><?=$data['attachment']?></a>
           <input type="file" class="form-control" name="attachment"/>
         </div>
         <hr>
@@ -76,6 +74,6 @@ $this->load->view("header");
 </div>
 <!-- /. PAGE INNER  -->
 </div>
-<?php
+<?php 
 $this->load->view("footer");
 ?>

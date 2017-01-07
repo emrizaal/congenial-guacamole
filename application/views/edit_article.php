@@ -1,4 +1,4 @@
-<?php
+<?php 
 $this->load->view("header");
 ?>
 <!-- /. NAV SIDE  -->
@@ -6,17 +6,15 @@ $this->load->view("header");
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2 align="center">Edit Article</h2>
+        <h2 align="center">Edit Article</h2> 
         <hr>
       </div>
     </div>
     <div class="row">
      <div class="col-md-12">
-     <form action="<?=API_LINK?>/article/updateArticle" method="POST" role="form" enctype="multipart/form-data">
+     <form action="<?=base_url()?>article/updateArticle" method="POST" role="form" enctype="multipart/form-data">
      <input type="hidden" name="id_article" value="<?=$data['id_article']?>">
-     <input type="hidden" name="id_mosque" value="<?=$this->session->userdata('id_mosque')?>">
-     <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
-        <div class="form-group">
+        <div class="form-group"> 
           <label>Title</label>
           <input type="text" value="<?=$data['title']?>" class="form-control" name="title" required/>
           <div class="help-block with-errors"></div>
@@ -28,7 +26,7 @@ $this->load->view("header");
         <div class="form-group">
           <label>Photo</label>
           <br>
-          <img src="<?=API_LINK?>/assets/image/article/<?=$data['pic']?>" height="300px">
+          <img src="<?=base_url()?>assets/image/article/<?=$data['pic']?>" height="300px">
           <input type="file" class="form-control" name="fupload"/>
         </div>
         <hr>
@@ -40,6 +38,6 @@ $this->load->view("header");
 </div>
 <!-- /. PAGE INNER  -->
 </div>
-<?php
+<?php 
 $this->load->view("footer");
 ?>

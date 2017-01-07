@@ -58,7 +58,12 @@ class MY_Controller extends CI_Controller {
 			show_error($this->email->print_debugger());
 		}
 		*/
-		
+
+	}
+
+	public function getAllByIdMosque($tabel,$key,$id){
+		$res=$this->m_kajian->getAllByIdMosque($tabel,$key,$id);
+		print(json_encode(array('collection'=>$res)));
 	}
 }
 

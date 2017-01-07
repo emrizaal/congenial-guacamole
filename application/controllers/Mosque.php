@@ -41,7 +41,7 @@ class Mosque extends MY_Controller {
 
 	public function updateMosque(){
 		$config['upload_path']   =   "assets/image/mosque";
-		$config['allowed_types'] =   "gif|jpg|jpeg|png"; 
+		$config['allowed_types'] =   "gif|jpg|jpeg|png";
 		$config['max_size']      =   "5000";
 		$config['max_width']     =   "1907";
 		$config['max_height']    =   "1280";
@@ -87,7 +87,7 @@ class Mosque extends MY_Controller {
 			$data['info']="<div class='alert alert-success'>Success</div>";
 			$this->load->view("change_password",$data);
 		}
-		
+
 	}
 }
 

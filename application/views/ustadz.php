@@ -6,7 +6,7 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
-
+    
     <div class="row">
         <div class="col-lg-12">
             <a href="<?=base_url()?>ustadz/addUstadz"><button class="btn btn-primary">Add Ustadz</button></a>
@@ -28,22 +28,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
+                                <?php 
                                 $no=1;
-                                foreach($data['collection'] as $d){
+                                foreach($data as $d){
                                     ?>
                                     <tr>
                                         <td><?=$no?></td>
-                                        <td><img height="200px" src="<?=API_LINK?>/assets/image/ustadz/<?=$d['pic']?>"></td>
+                                        <td><img height="200px" src="<?=base_url()?>assets/image/ustadz/<?=$d['pic']?>"></td>
                                         <td><?=$d['name']?></td>
                                         <td><?=substr($d['description'], 0,255)?></td>
                                         <td>
                                             <a href="<?=base_url()?>ustadz/editUstadz/<?=$d['id_ustadz']?>"><button class="btn btn-success"><span class="fa fa-pencil"></span></button></a>
-                                            <a href="<?=API_LINK?>/ustadz/deleteUstadz/<?=$d['id_ustadz']?>/<?=$this->session->userdata('token')?>/<?=$this->session->userdata('id_mosque')?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
+                                            <a href="<?=base_url()?>ustadz/deleteUstadz/<?=$d['id_ustadz']?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
                                             <a href="<?=base_url()?>ustadz/detailUstadz/<?=$d['id_ustadz']?>"><button class="btn btn-primary"><span class="fa fa-external-link"></span></button></a>
                                         </td>
                                     </tr>
-                                    <?php
+                                    <?php 
                                     $no++;
                                 } ?>
                             </tbody>

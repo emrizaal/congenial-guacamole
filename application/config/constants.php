@@ -18,7 +18,6 @@ define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0755);
-define('API_LINK','http://192.168.56.1/_harmoni/api.kajian');
 
 /*
 |--------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-<?php
+<?php 
 $this->load->view("header");
 ?>
 <!-- /. NAV SIDE  -->
@@ -6,15 +6,13 @@ $this->load->view("header");
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2 align="center">Edit E-Book</h2>
+        <h2 align="center">Edit E-Book</h2> 
         <hr>
       </div>
     </div>
     <div class="row">
      <div class="col-md-12">
-       <form action="<?=API_LINK?>/ebook/updateEbook" method="POST" role="form" enctype="multipart/form-data">
-         <input type="hidden" name="id_mosque" value="<?=$this->session->userdata('id_mosque')?>">
-         <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
+       <form action="<?=base_url()?>ebook/updateEbook" method="POST" role="form" enctype="multipart/form-data">
          <input type="hidden" name="id_ebook" value="<?=$data['id_ebook']?>">
          <div class="form-group">
           <label>Title</label>
@@ -33,7 +31,7 @@ $this->load->view("header");
         <div class="form-group">
           <label>Photo</label>
           <br>
-          <img src="<?=API_LINK?>/assets/image/ebook/<?=$data['pic']?>" height="300px">
+          <img src="<?=base_url()?>assets/image/ebook/<?=$data['pic']?>" height="300px">
           <input type="file" class="form-control" name="fupload"/>
         </div>
         <hr>
@@ -45,6 +43,6 @@ $this->load->view("header");
 </div>
 <!-- /. PAGE INNER  -->
 </div>
-<?php
+<?php 
 $this->load->view("footer");
 ?>

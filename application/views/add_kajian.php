@@ -1,4 +1,4 @@
-<?php
+<?php 
 $this->load->view("header");
 ?>
 <!-- /. NAV SIDE  -->
@@ -6,15 +6,13 @@ $this->load->view("header");
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2 align="center">Add Kajian</h2>
+        <h2 align="center">Add Kajian</h2> 
         <hr>
       </div>
     </div>
     <div class="row">
      <div class="col-md-12">
-       <form action="<?=API_LINK?>/kajian/saveKajian" method="POST" role="form" enctype="multipart/form-data">
-         <input type="hidden" name="id_mosque" value="<?=$this->session->userdata('id_mosque')?>">
-         <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
+       <form action="<?=base_url()?>kajian/saveKajian" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
           <label>Name</label>
           <input type="text" class="form-control" name="name" required/>
@@ -23,11 +21,11 @@ $this->load->view("header");
         <div class="form-group">
           <label>Ustadz</label>
           <select name="ustadz" class="form-control" required>
-            <?php
-            foreach ($ustadz['collection'] as $u){
+            <?php 
+            foreach ($ustadz as $u){
               ?>
               <option value="<?=$u['id_ustadz']?>"><?=$u['name']?></option>
-              <?php
+              <?php 
             }
             ?>
           </select>
@@ -75,6 +73,6 @@ $this->load->view("header");
 </div>
 <!-- /. PAGE INNER  -->
 </div>
-<?php
+<?php 
 $this->load->view("footer");
 ?>

@@ -7,7 +7,7 @@
         <!-- /.col-lg-12 -->
     </div>
     <div class="row">
-        <img src="http://192.168.56.1/_harmoni/api.kajian/assets/image/kajian/<?=$data['pic']?>"" width="200px">
+        <img src="<?=base_url()?>assets/image/kajian/<?=$data['pic']?>"" width="200px">
     </div>
     <div class="row">
         <div class="col-lg-12">
