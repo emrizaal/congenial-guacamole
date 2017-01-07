@@ -28,7 +28,8 @@ class Auth extends MY_Controller {
 				'ebook' => $res['ebook'],
 				'article' => $res['article'],
 				'slider' => $res['slider'],
-				'is_admin' => 0
+				'is_admin' => 0,
+				'token' => $res['token']
 				);
 			$this->session->set_userdata($data);
 			redirect('dashboard');

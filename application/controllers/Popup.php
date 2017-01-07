@@ -12,13 +12,13 @@ class Popup extends MY_Controller {
   }
 
   public function index(){
-    $data['data']=$this->m_mosque->getMosqueById($this->session->userdata('id_mosque'));
+    $data['data']=json_decode($this->curl->simple_get(API_LINK.'/popup/getPopupByIdMosque/'.$this->session->userdata('id_mosque')),true);
     $this->load->view('popup',$data);
   }
 
  public function updatePopup(){
     $config['upload_path']   =   "assets/image/popup";
-    $config['allowed_types'] =   "gif|jpg|jpeg|png"; 
+    $config['allowed_types'] =   "gif|jpg|jpeg|png";
     $config['max_size']      =   "5000";
     $config['max_width']     =   "1907";
     $config['max_height']    =   "1280";
@@ -41,7 +41,7 @@ class Popup extends MY_Controller {
     $res = $this->m_mosque->update($this->_table,$data,'id_mosque');
     if($res)redirect("popup");
   }
-  
+
 }
 
 ?>

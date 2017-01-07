@@ -12,7 +12,7 @@ class Ustadz extends MY_Controller {
 	}
 
 	public function index(){
-		$data['data']=$this->m_ustadz->getAllByIdMosque($this->_table,'id_mosque',$this->session->userdata('id_mosque'));
+		$data['data']=json_decode($this->curl->simple_get(API_LINK.'/kajian/getAllByIdMosque/ustadz/id_mosque/'.$this->session->userdata('id_mosque')),true);
 		$this->load->view('ustadz',$data);
 	}
 
@@ -20,51 +20,19 @@ class Ustadz extends MY_Controller {
 		$this->load->view('add_ustadz');
 	}
 
-	public function saveUstadz(){
-		$config['upload_path']   =   "assets/image/ustadz";
-		$config['allowed_types'] =   "gif|jpg|jpeg|png"; 
-		$config['max_size']      =   "5000";
-		$config['max_width']     =   "1907";
-		$config['max_height']    =   "1280";
-		$this->load->library('upload',$config);
-
-		if(!$this->upload->do_upload('fupload')){
-			echo $this->upload->display_errors();
-		}else{
-			$finfo=$this->upload->data();
-		}
-
-		$p=$this->db->escape_str($this->input->post());
-		$data=array(
-			'id_mosque' => $this->session->userdata('id_mosque'),
-			'name' => $p['name'],
-			'description' => $p['description'],
-			'pic' => $finfo['file_name']
-			);
-		$res = $this->m_ustadz->insert($this->_table,$data);
-		if($res)redirect("ustadz");
-	}
-
-	public function deleteUstadz($id){
-		$data=$this->m_ustadz->getUstadzById($this->session->userdata('id_mosque'),$id);
-		$this->m_ustadz->deleteById($this->_table,array('id_ustadz'=>$id));
-		unlink("assets/image/ustadz/".$data['pic']);
-		redirect("ustadz");
-	}
-
 	public function detailUstadz($id){
-		$data['data']=$this->m_ustadz->getUstadzById($this->session->userdata('id_mosque'),$id);
+		$data['data']=json_decode($this->curl->simple_get(API_LINK.'/ustadz/getUstadzById/'.$this->session->userdata('id_mosque').'/'.$id),true);
 		$this->load->view("detail_ustadz",$data);
 	}
 
 	public function editUstadz($id){
-		$data['data']=$this->m_ustadz->getUstadzById($this->session->userdata('id_mosque'),$id);
+		$data['data']=json_decode($this->curl->simple_get(API_LINK.'/ustadz/getUstadzById/'.$this->session->userdata('id_mosque').'/'.$id),true);
 		$this->load->view("edit_ustadz",$data);
 	}
 
 	public function updateUstadz(){
 		$config['upload_path']   =   "assets/image/ustadz";
-		$config['allowed_types'] =   "gif|jpg|jpeg|png"; 
+		$config['allowed_types'] =   "gif|jpg|jpeg|png";
 		$config['max_size']      =   "5000";
 		$config['max_width']     =   "1907";
 		$config['max_height']    =   "1280";
@@ -88,7 +56,7 @@ class Ustadz extends MY_Controller {
 		$res = $this->m_ustadz->update($this->_table,$data,'id_ustadz');
 		if($res)redirect("ustadz");
 	}
-	
+
 }
 
 ?>
