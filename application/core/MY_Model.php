@@ -1,4 +1,4 @@
-<?php
+<?php 
 class MY_Model extends CI_Model {
 
 
@@ -17,14 +17,14 @@ class MY_Model extends CI_Model {
 		return $query;
 	}
 
-	function deleteById($table,$data,$id_mosque){
-		$data['id_mosque']=$id_mosque;
+	function deleteById($table,$data){
+		$data['id_mosque']=$this->session->userdata("id_mosque");
 		$query = $this->db->delete($table,$data);
 		return $query;
 	}
 
 	function update($table,$data,$key){
-		$this->db->where('id_mosque',$data['id_mosque']);
+		$this->db->where('id_mosque',$this->session->userdata("id_mosque"));
 		$this->db->where($key,$data[$key]);
 		$query = $this->db->update($table,$data);
 		return $query;

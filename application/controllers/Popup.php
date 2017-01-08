@@ -12,13 +12,8 @@ class Popup extends MY_Controller {
   }
 
   public function index(){
-    $data['data']=$this->m_mosque->getMosqueById($this->session->userdata('id_mosque'));
+    $data['data']=json_decode($this->curl->simple_get(API_LINK.'/popup/getPopupByIdMosque/'.$this->session->userdata('id_mosque')),true);
     $this->load->view('popup',$data);
-  }
-
-  public function getPopupByIdMosque($id){
-    $data=$this->m_mosque->getMosqueById($id);
-    print(json_encode($data));
   }
 
  public function updatePopup(){
@@ -29,28 +24,22 @@ class Popup extends MY_Controller {
     $config['max_height']    =   "1280";
     $this->load->library('upload',$config);
 
-    $p=$this->db->escape_str($this->input->post());
-    $mos=$this->m_mosque->getMosqueById($p['id_mosque']);
-    if($mos['token']!=$p['token'])die();
     if(!$this->upload->do_upload('fupload')){
-      //echo $this->upload->display_errors();
+      echo $this->upload->display_errors();
     }else{
       $finfo=$this->upload->data();
       $data['pic'] = $finfo['file_name'];
-      $pic=$this->m_mosque->getMosqueById($p['id_mosque']);
+      $pic=$this->m_mosque->getMosqueById($this->session->userdata('id_mosque'));
       unlink("assets/image/popup/".$pic['popup']);
     }
 
+    $p=$this->db->escape_str($this->input->post());
     $data=array(
-      'id_mosque' => $p['id_mosque'],
+      'id_mosque' => $this->session->userdata('id_mosque'),
       'popup' => $finfo['file_name']
       );
     $res = $this->m_mosque->update($this->_table,$data,'id_mosque');
-    if($res){
-			print(json_encode(array('status'=>true)));
-		}else{
-			print(json_encode(array('status'=>false)));
-		};
+    if($res)redirect("popup");
   }
 
 }

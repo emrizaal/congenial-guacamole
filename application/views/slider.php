@@ -13,7 +13,9 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-               <form action="<?=base_url()?>slider/saveSlider" method="POST" role="form" enctype="multipart/form-data">
+               <form action="<?=API_LINK?>/slider/saveSlider" method="POST" role="form" enctype="multipart/form-data">
+                 <input type="hidden" name="id_mosque" value="<?=$this->session->userdata('id_mosque')?>">
+                 <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
                   <div class="form-group">
                       <label>Image</label>
                       <input type="file" class="form-control" name="fupload"/>
@@ -49,15 +51,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php 
+                                <?php
                                 $no=1;
                                 foreach($data as $d){
                                     ?>
                                     <tr>
-                                        <td><img height="200px" src="<?=base_url()?>assets/image/slider/<?=$d['pic']?>"></td>
+                                        <td><img height="200px" src="<?=API_LINK?>/assets/image/slider/<?=$d['pic']?>"></td>
                                         <td>
-                                            <form method="POST" action="<?=base_url()?>slider/updateStatus">
+                                            <form method="POST" action="<?=API_LINK?>/slider/updateStatus">
                                                 <input type="hidden" name="id_slider" value=<?=$d['id_slider']?>>
+                                                <input type="hidden" name="id_mosque" value="<?=$this->session->userdata('id_mosque')?>">
+                                                <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
                                                 <select class="form-control" name="status">
                                                     <option value="1" <?=$d['status']==1 ? 'selected' : ''?>>Active</option>
                                                     <option value="0" <?=$d['status']==0 ? 'selected' : ''?>>Not Active</option>
@@ -66,10 +70,10 @@
                                             </form>
                                         </td>
                                         <td>
-                                            <a href="<?=base_url()?>slider/deleteSlider/<?=$d['id_slider']?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
+                                            <a href="<?=API_LINK?>/slider/deleteSlider/<?=$d['id_slider']?>/<?=$this->session->userdata('token')?>/<?=$this->session->userdata('id_mosque')?>" onclick="return confirm('Are you sure you ?');"><button class="btn btn-danger"><span class="fa fa-eraser"></span></button></a>
                                         </td>
                                     </tr>
-                                    <?php 
+                                    <?php
                                     $no++;
                                 } ?>
                             </tbody>

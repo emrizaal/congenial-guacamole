@@ -7,7 +7,7 @@
         <!-- /.col-lg-12 -->
     </div>
     <div class="row">
-        <img height="300px" src="<?=base_url()?>assets/image/article/<?=$data['pic']?>">
+        <img height="300px" src="<?=API_LINK?>/assets/image/article/<?=$data['pic']?>">
     </div>
     <div class="row">
         <div class="col-lg-12">
