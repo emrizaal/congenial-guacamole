@@ -1,4 +1,4 @@
-<?php 
+<?php
 $this->load->view("header");
 ?>
 <!-- /. NAV SIDE  -->
@@ -6,14 +6,15 @@ $this->load->view("header");
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2 align="center">Edit Mosque Profile</h2> 
+        <h2 align="center">Edit Mosque Profile</h2>
         <hr>
       </div>
     </div>
     <div class="row">
      <div class="col-md-12">
-      <form action="<?=base_url()?>mosque/updateMosque" method="POST" role="form" enctype="multipart/form-data">
+      <form action="<?=API_LINK?>/mosque/updateMosque" method="POST" role="form" enctype="multipart/form-data">
         <input type="hidden" name="id_mosque" value="<?=$data['id_mosque']?>">
+        <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
         <div class="form-group">
           <label>Username</label>
           <input type="text" class="form-control" name="username" required value="<?=$data['username']?>" />
@@ -57,13 +58,13 @@ $this->load->view("header");
         <div class="form-group">
           <label>Pic :</label>
           <br>
-          <?php 
+          <?php
           $pic = 'mosque_default.png';
           if(!empty($data['pic'])){
             $pic = $data['pic'];
           }
           ?>
-          <img src="<?=base_url()?>assets/image/mosque/<?=$pic?>" width="150"/>
+          <img src="<?=API_LINK?>/assets/image/mosque/<?=$pic?>" width="150"/>
           <input type="file" class="form-control" name="fupload">
         </div>
         <hr>
@@ -75,6 +76,6 @@ $this->load->view("header");
 </div>
 <!-- /. PAGE INNER  -->
 </div>
-<?php 
+<?php
 $this->load->view("footer");
 ?>

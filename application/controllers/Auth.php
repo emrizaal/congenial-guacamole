@@ -17,9 +17,10 @@ class Auth extends MY_Controller {
 
 	public function auth(){
 		$p=$this->input->post();
-		$res=$this->m_auth->auth($p);
+		$out=json_decode($this->curl->simple_post(API_LINK.'/auth/auth',$p),true);
 		$error['error']=true;
-		if($res){
+		if($out['status']==true){
+			$res=$out['data'];
 			$data=array(
 				'id_mosque' => $res['id_mosque'],
 				'name' => $res['name'],

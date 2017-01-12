@@ -1,4 +1,4 @@
-<?php 
+<?php
 $this->load->view("header");
 ?>
 <!-- /. NAV SIDE  -->
@@ -6,14 +6,16 @@ $this->load->view("header");
   <div id="page-inner">
     <div class="row">
       <div class="col-md-12">
-        <h2 align="center">Change Password</h2> 
+        <h2 align="center">Change Password</h2>
         <hr>
       </div>
     </div>
     <?=$info?>
     <div class="row">
      <div class="col-md-12">
-      <form action="<?=base_url()?>mosque/savePassword" method="POST" role="form" enctype="multipart/form-data">
+      <form action="<?=API_LINK?>/mosque/savePassword" method="POST" role="form" enctype="multipart/form-data">
+        <input type="hidden" name="id_mosque" value="<?=$this->session->userdata('id_mosque')?>">
+        <input type="hidden" name="token" value="<?=$this->session->userdata('token')?>">
         <div class="form-group">
           <label for="">Old Password:</label>
           <input type="password" class="form-control" id="" name="old" required>
@@ -38,6 +40,6 @@ $this->load->view("header");
 </div>
 <!-- /. PAGE INNER  -->
 </div>
-<?php 
+<?php
 $this->load->view("footer");
 ?>

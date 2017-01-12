@@ -29,7 +29,7 @@
 
 	<!-- DataTables Responsive CSS -->
 	<link href="<?=base_url()?>assets/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
-	
+
 
 </head>
 <body class="bglogin">
@@ -41,12 +41,11 @@
 						<h4>Login Admin</h4>
 					</div>
 					<div class="modal-body">
-						<?php echo form_open('auth/auth'); 
+						<?php echo form_open('auth/auth');
 						if(isset($error) && $error) {
 							echo "<p class='bg-danger text-danger' style='padding:10px; border-radius:4px'>Username dan Password yang Anda masukkan salah!</p><br>";
 						}
 						?>
-						
 						<form class="form-inline">
 							<div class="form-group">
 								<div class="input-group">

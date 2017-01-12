@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/quick_insert.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/table.css">
     <link rel="stylesheet" href="<?=base_url();?>assets/wysiwyg/css/plugins/video.css">
-    
+
     <link href="<?=base_url()?>assets/css/jquery-ui.css" rel="stylesheet">
 </head>
 
@@ -90,7 +90,7 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-            <?php 
+            <?php
             $session = $this->session->userdata();
             ?>
             <div class="navbar-default sidebar" role="navigation">
@@ -98,9 +98,6 @@
                     <ul class="nav" id="side-menu">
                         <li>
                             <a href="<?=base_url()?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="<?=base_url()?>mosque"><img src="<?=base_url()?>assets/image/mosque/mosque_default.png" width="50"/> Mosque</a>
                         </li>
                         <?php if($session['kajian']==1){?>
                         <li>
