@@ -17,7 +17,7 @@ class Kajian extends MY_Controller {
 	}
 
 	public function addKajian(){
-		$data['data']=json_decode($this->curl->simple_get(API_LINK.'/kajian/getAllKajianByIdMosque/'.$this->session->userdata('id_mosque')),true);
+		$data['ustadz']=json_decode($this->curl->simple_get(API_LINK.'/kajian/getAllByIdMosque/ustadz/id_mosque/'.$this->session->userdata('id_mosque')),true);
 		$this->load->view('add_kajian',$data);
 	}
 
